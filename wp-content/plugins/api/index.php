@@ -10,11 +10,42 @@ Author URI:
 License: GPLv2
 */
 
-include('wp-load.php');
+function my_function()
+{
+    $response = wp_remote_get('https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC');
 
-$response = wp_remote_get('https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC');
-$body = wp_remote_retrieve_body($response);
-$data = json_decode($body);
+    if (is_wp_error($response)) {
+        echo 'Something went wrong...';
+        return;
+    }
+
+    $body = wp_remote_retrieve_body($response);
+
+    $data = json_decode($body->status);
+
+    echo $data;
+    return;
+
+
+    // foreach ($data as $item) {
+    //     $product_id = wp_insert_post(
+    //         array(
+    //             'post_title' => $item->name,
+    //             'post_content' => '',
+    //             'post_status' => 'publish',
+    //             'post_type' => 'product'
+    //         ));
+    // }
+}
+
+add_action('admin_init', 'my_function');
+
+
+// $response = wp_remote_get('https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC');
+// $body = wp_remote_retrieve_body($response);
+// $data = json_decode($body);
+
+// return dd($data);
 
 // foreach ($data as $item) {
 //     $product = new WC_Product_Simple();
