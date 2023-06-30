@@ -1,4 +1,15 @@
 <?php
+
+/*
+Plugin Name: Api Plugin
+Plugin URI: 
+Description: Parse Data from REST endpoints
+Version: 1.0
+Author: Miichael Saiba 
+Author URI:  
+License: GPLv2
+*/
+
 include('wp-load.php');
 
 $response = wp_remote_get('https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC');
