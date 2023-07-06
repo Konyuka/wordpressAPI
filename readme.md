@@ -1,9 +1,6 @@
-# Plugin Name
-Contributors: Your Name
-Tags: tender, import, WooCommerce
-Requires at least: 5.0
-Tested up to: 5.8
-Stable tag: 1.0.0
+# Tenders Importer
+Contributors: Michael Saiba
+#
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
