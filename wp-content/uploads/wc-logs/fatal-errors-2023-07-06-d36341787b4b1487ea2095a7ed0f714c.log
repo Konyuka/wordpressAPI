@@ -1,0 +1,148 @@
+2023-07-06T06:51:38+00:00 CRITICAL Uncaught Error: Call to undefined function dd() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:17
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin.php(175): do_action('admin_init')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-admin\index.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 17
+
+2023-07-06T06:52:50+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:17
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin.php(175): do_action('admin_init')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-admin\plugins.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 17
+
+2023-07-06T07:30:09+00:00 CRITICAL Uncaught Error: Call to undefined function dump() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:17
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin.php(175): do_action('admin_init')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-admin\index.php(10): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 17
+
+2023-07-06T07:30:10+00:00 CRITICAL Uncaught Error: Call to undefined function dump() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:17
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 17
+
+2023-07-06T07:47:59+00:00 CRITICAL Uncaught Error: Call to undefined function dump() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:17
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 17
+
+2023-07-06T07:48:56+00:00 CRITICAL Uncaught Error: Call to undefined function dump() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:17
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 17
+
+2023-07-06T07:50:58+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:28
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 28
+
+2023-07-06T09:48:21+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:175
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 175
+
+2023-07-06T09:48:21+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:175
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 175
+
+2023-07-06T09:48:22+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:175
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin.php(175): do_action('admin_init')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-admin\users.php(11): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 175
+
+2023-07-06T09:50:21+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:175
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 175
+
+2023-07-06T09:50:25+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:175
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 175
+
+2023-07-06T09:52:22+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:178
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 178
+
+2023-07-06T09:53:26+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:177
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 177
+
+2023-07-06T09:55:24+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:176
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 176
+
+2023-07-06T09:57:24+00:00 CRITICAL Uncaught Error: Call to undefined function wc_create_product() in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:176
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): my_function('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(false, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(45): do_action('admin_init')
+#4 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 176
+
