@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Kenyan Tender Importer
+ * Plugin Name: Kenyan Tenders Importer
  * Description: Import tenders from a JSON API and create products in WooCommerce.
  * Version: 1.0.0
  * Author: Michael Saiba 
@@ -183,7 +183,7 @@ function import_tenders()
         update_post_meta($product_id, '_downloadable_files', array($download));
         save_custom_product_fields($product_id);
 
-        return;
+        // return;
     }
     
 }

@@ -26,7 +26,7 @@ function tender_import_page()
 	?>
 	<div class="wrap">
 		<h1>Tender Importer</h1>
-		<p>Creator: Michael Saiba</p>
+		<p>Author: Michael Saiba</p>
 		<form method="post">
 			<?php wp_nonce_field('import_tenders', 'tender_import_nonce'); ?>
 			<button type="submit" name="import_tenders" class="button button-primary ">Import Tenders</button>
