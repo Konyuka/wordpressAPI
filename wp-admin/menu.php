@@ -21,6 +21,35 @@
  * @global array $menu
  */
 
+function tender_import_page()
+{
+	?>
+	<div class="wrap">
+		<h1>Tender Import</h1>
+		<p>Click the button below to import tenders.</p>
+		<form method="post">
+			<?php wp_nonce_field('import_tenders', 'tender_import_nonce'); ?>
+			<button type="submit" name="import_tenders" class="button button-primary">Import Tenders</button>
+		</form>
+		<?php
+		if (isset($_POST['import_tenders']) && wp_verify_nonce($_POST['tender_import_nonce'], 'import_tenders')) {
+			import_tenders();
+			echo '<p>Tenders imported successfully!</p>';
+		}
+		?>
+	</div>
+	<?php
+}
+
+function add_tender_import_page()
+{
+	add_menu_page('Tender Import', 'Tender Import', 'edit_posts', 'tender-import', 'tender_import_page');
+}
+add_action('admin_menu', 'add_tender_import_page');
+
+
+
+
 $menu[2] = array( __( 'Dashboard' ), 'read', 'index.php', '', 'menu-top menu-top-first menu-icon-dashboard', 'menu-dashboard', 'dashicons-dashboard' );
 
 $submenu['index.php'][0] = array( __( 'Home' ), 'read', 'index.php' );

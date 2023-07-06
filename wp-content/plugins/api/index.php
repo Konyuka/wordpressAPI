@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Tender Importer
+ * Plugin Name: Kenyan Tender Importer
  * Description: Import tenders from a JSON API and create products in WooCommerce.
  * Version: 1.0.0
- * Author: Your Name
+ * Author: Michael Saiba 
  */
 
 // Register custom product fields
@@ -115,9 +115,7 @@ function save_custom_product_fields($post_id)
         }
     }
 }
-// add_action('woocommerce_process_product_meta', 'save_custom_product_fields');
 
-// Import tenders from JSON API
 function import_tenders()
 {
     // return;
@@ -127,12 +125,8 @@ function import_tenders()
     $response = wp_remote_get($api_url);
 
     if (is_wp_error($response)) {
-        // Handle error
         return;
     }
-
-    // $body = wp_remote_retrieve_body($response);
-    // $tender_lists = json_decode($body, true);
 
     $data = json_decode(wp_remote_retrieve_body($response), true);
     $tender_lists = $data['TenderDetails'][0]['TenderLists'];
@@ -177,8 +171,8 @@ function import_tenders()
         update_post_meta($product_id, '_downloadable_files', array($download));
         save_custom_product_fields($product_id);
 
-        return;
+        // return;
     }
+    
 }
-add_action('wp_loaded', 'import_tenders');
-// add_action('admin_init', 'import_tenders');
+add_action('admin_menu', 'add_tender_import_page');

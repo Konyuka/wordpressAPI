@@ -20,7 +20,7 @@ if ( ! function_exists( 'twentytwentytwo_support' ) ) :
 	 * @return void
 	 */
 	function twentytwentytwo_support() {
-
+ 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
 
@@ -65,3 +65,4 @@ add_action( 'wp_enqueue_scripts', 'twentytwentytwo_styles' );
 
 // Add block patterns
 require get_template_directory() . '/inc/block-patterns.php';
+
