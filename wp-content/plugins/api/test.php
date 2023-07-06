@@ -115,13 +115,10 @@ function save_custom_product_fields($post_id)
         }
     }
 }
-// add_action('woocommerce_process_product_meta', 'save_custom_product_fields');
 
 // Import tenders from JSON API
 function import_tenders()
 {
-    // return;
-
     $api_url = 'https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC';
 
     $response = wp_remote_get($api_url);
@@ -132,23 +129,31 @@ function import_tenders()
     }
 
     // $body = wp_remote_retrieve_body($response);
-    // $tender_lists = json_decode($body, true);
-
-    $data = json_decode(wp_remote_retrieve_body($response), true);
-    $tender_lists = $data['TenderDetails'][0]['TenderLists'];
+    // $tender_lists// Convert JSON data to array
+    $tender_lists = json_decode(wp_remote_retrieve_body($response), true);
 
     if (!is_array($tender_lists)) {
+        // Handle error
         return;
     }
-    foreach ($tender_lists as $tender) {
 
+    // Loop through tenders and create products
+    foreach ($tender_lists as $tender) {
+        // Check if product exists
+        if (get_page_by_title($tender['tender_name'], OBJECT, 'product') !== null) {
+            continue;
+        }
+
+        // Create product
         $product = array(
-            'post_title' => $tender['Tender_Brief'],
-            'post_content' => $tender['Work_Detail'],
+            'post_title' => $tender['tender_name'],
+            'post_content' => $tender['tender_description'],
+            'post_excerpt' => $tender['tender_short_description'],
             'post_status' => 'publish',
             'post_type' => 'product',
         );
 
+        // Add custom fields to product
         $product['meta_input'] = array(
             'bdr' => sanitize_text_field($tender['BDR_No']),
             'tender_no' => sanitize_text_field($tender['Tender_No']),
@@ -162,23 +167,11 @@ function import_tenders()
             'tender_expiry' => sanitize_text_field($tender['Tender_Expiry']),
         );
 
+        // Insert product
         $product_id = wp_insert_post($product);
 
-        if (is_wp_error($product_id)) {
-            continue;
-        }
-
-        update_post_meta($product_id, '_regular_price', 500);
-        $download = array(
-            'id' => $tender['BDR_No'],
-            'name' => 'tenderfile',
-            'file' => $tender['FileUrl'],
-        );
-        update_post_meta($product_id, '_downloadable_files', array($download));
+        // Save custom fields
         save_custom_product_fields($product_id);
-
-        return;
     }
 }
-add_action('wp_loaded', 'import_tenders');
-// add_action('admin_init', 'import_tenders');
+add_action('admin_init', 'import_tenders');

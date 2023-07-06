@@ -146,3 +146,27 @@ Stack trace:
 #4 {main}
   thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 176
 
+2023-07-06T10:01:26+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:144
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): import_tenders('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-settings.php(645): do_action('wp_loaded')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\htdocs\wordpress\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 144
+
+2023-07-06T10:01:30+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php:144
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): import_tenders('')
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-settings.php(645): do_action('wp_loaded')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\htdocs\wordpress\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\htdocs\wordpress\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 144
+
