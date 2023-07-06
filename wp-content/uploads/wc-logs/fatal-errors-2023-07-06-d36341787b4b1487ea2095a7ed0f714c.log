@@ -170,3 +170,20 @@ Stack trace:
 #7 {main}
   thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\api\index.php on line 144
 
+2023-07-06T12:50:24+00:00 CRITICAL Uncaught Error: Call to a member function set_status() on bool in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php:377
+Stack trace:
+#0 C:\xampp\htdocs\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(1181): Automattic\WooCommerce\Admin\API\OnboardingTasks::create_product_from_template(Object(WP_REST_Request))
+#1 C:\xampp\htdocs\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(1028): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wc-admin/onboa...', Array, NULL)
+#2 C:\xampp\htdocs\htdocs\wordpress\wp-includes\rest-api\class-wp-rest-server.php(442): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 C:\xampp\htdocs\htdocs\wordpress\wp-includes\rest-api.php(410): WP_REST_Server->serve_request('/wc-admin/onboa...')
+#4 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(308): rest_api_loaded(Object(WP))
+#5 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\htdocs\wordpress\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp.php(399): do_action_ref_array('parse_request', Array)
+#8 C:\xampp\htdocs\htdocs\wordpress\wp-includes\class-wp.php(780): WP->parse_request('')
+#9 C:\xampp\htdocs\htdocs\wordpress\wp-includes\functions.php(1334): WP->main('')
+#10 C:\xampp\htdocs\htdocs\wordpress\wp-blog-header.php(16): wp()
+#11 C:\xampp\htdocs\htdocs\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#12 {main}
+  thrown in C:\xampp\htdocs\htdocs\wordpress\wp-content\plugins\woocommerce\src\Admin\API\OnboardingTasks.php on line 377
+

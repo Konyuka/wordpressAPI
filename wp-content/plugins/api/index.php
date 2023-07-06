@@ -6,7 +6,6 @@
  * Author: Michael Saiba 
  */
 
-// Register custom product fields
 function add_custom_product_fields()
 {
     woocommerce_wp_text_input(
@@ -92,10 +91,8 @@ function add_custom_product_fields()
 }
 add_action('woocommerce_product_options_general_product_data', 'add_custom_product_fields');
 
-// Save custom product fields data
 function save_custom_product_fields($post_id)
 {
-    // Save custom fields
     $custom_fields = array(
         'bdr' => 'BDR_No',
         'tender_no' => 'Tender_No',
@@ -118,9 +115,8 @@ function save_custom_product_fields($post_id)
 
 function import_tenders()
 {
-    // return;
+    $api_url = API_URL;
 
-    $api_url = 'https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC';
 
     $response = wp_remote_get($api_url);
 
@@ -135,6 +131,22 @@ function import_tenders()
         return;
     }
     foreach ($tender_lists as $tender) {
+
+        $existing_product = get_posts(
+            array(
+                'post_type' => 'product',
+                'meta_query' => array(
+                    array(
+                        'key' => 'bdr',
+                        'value' => sanitize_text_field($tender['BDR_No']),
+                    ),
+                ),
+            )
+        );
+
+        if (!empty($existing_product)) {
+            continue; 
+        }
 
         $product = array(
             'post_title' => $tender['Tender_Brief'],
@@ -171,7 +183,7 @@ function import_tenders()
         update_post_meta($product_id, '_downloadable_files', array($download));
         save_custom_product_fields($product_id);
 
-        // return;
+        return;
     }
     
 }
