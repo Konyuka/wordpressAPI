@@ -38,7 +38,7 @@ function tender_import_page()
 		}
 		?>
 	</div>
-	<?php
+	 <?php
 }
 
 function add_tender_import_page()
