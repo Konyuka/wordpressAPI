@@ -88,6 +88,7 @@ function add_custom_product_fields()
             'description' => __('Enter the Tender Expiry for this tender', 'woocommerce'),
         )
     );
+
 }
 add_action('woocommerce_product_options_general_product_data', 'add_custom_product_fields');
 
@@ -105,24 +106,31 @@ function save_custom_product_fields($post_id)
         'phone' => 'Mobile_Contacts',
         'tender_expiry' => 'Tender_Expiry',
     );
+    
 
     foreach ($custom_fields as $field_id => $field_name) {
         if (isset($_POST[$field_id])) {
             update_post_meta($post_id, $field_id, sanitize_text_field($_POST[$field_id]));
         }
     }
+
 }
 
 function import_tenders()
 {
     $api_url = API_URL;
 
+    add_filter('http_request_timeout', function ($timeout) {
+        return 90; 
+    });
 
     $response = wp_remote_get($api_url);
 
+
     if (is_wp_error($response)) {
-        return;
-    }
+        $error_message = $response->get_error_message();
+        echo "Error: $error_message";
+    } 
 
     $data = json_decode(wp_remote_retrieve_body($response), true);
     $tender_lists = $data['TenderDetails'][0]['TenderLists'];
@@ -130,6 +138,7 @@ function import_tenders()
     if (!is_array($tender_lists)) {
         return;
     }
+
     foreach ($tender_lists as $tender) {
 
         $existing_product = get_posts(
@@ -145,7 +154,7 @@ function import_tenders()
         );
 
         if (!empty($existing_product)) {
-            continue; 
+            continue;
         }
 
         $product = array(
@@ -166,6 +175,8 @@ function import_tenders()
             'email' => sanitize_text_field($tender['Email_Address']),
             'phone' => sanitize_text_field($tender['Mobile_Contacts']),
             'tender_expiry' => sanitize_text_field($tender['Tender_Expiry']),
+            '_downloadable' => 'yes',
+            '_virtual' => 'yes',
         );
 
         $product_id = wp_insert_post($product);
@@ -176,15 +187,17 @@ function import_tenders()
 
         update_post_meta($product_id, '_regular_price', 500);
         $download = array(
-            'id' => $tender['BDR_No'],
             'name' => 'tenderfile',
             'file' => $tender['FileUrl'],
         );
+
         update_post_meta($product_id, '_downloadable_files', array($download));
         save_custom_product_fields($product_id);
 
-        // return;
     }
-    
+
 }
+
+
+
 add_action('admin_menu', 'add_tender_import_page');
