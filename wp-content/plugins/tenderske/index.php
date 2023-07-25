@@ -106,7 +106,7 @@ function save_custom_product_fields($post_id)
         'phone' => 'Mobile_Contacts',
         'tender_expiry' => 'Tender_Expiry',
     );
-    
+
 
     foreach ($custom_fields as $field_id => $field_name) {
         if (isset($_POST[$field_id])) {
@@ -121,7 +121,7 @@ function import_tenders()
     $api_url = API_URL;
 
     add_filter('http_request_timeout', function ($timeout) {
-        return 90; 
+        return 90;
     });
 
     $response = wp_remote_get($api_url);
@@ -130,7 +130,7 @@ function import_tenders()
     if (is_wp_error($response)) {
         $error_message = $response->get_error_message();
         echo "Error: $error_message";
-    } 
+    }
 
     $data = json_decode(wp_remote_retrieve_body($response), true);
     $tender_lists = $data['TenderDetails'][0]['TenderLists'];
@@ -140,6 +140,8 @@ function import_tenders()
     }
 
     foreach ($tender_lists as $tender) {
+
+
 
         $existing_product = get_posts(
             array(
@@ -185,15 +187,18 @@ function import_tenders()
             continue;
         }
 
+
+
         update_post_meta($product_id, '_regular_price', 500);
+
+        $fileUrl = str_replace('\\', '/', $tender['FileUrl']);
         $download = array(
             'name' => 'tenderfile',
-            'file' => $tender['FileUrl'],
+            'file' => $fileUrl,
         );
 
         update_post_meta($product_id, '_downloadable_files', array($download));
         save_custom_product_fields($product_id);
-
     }
 
 }
