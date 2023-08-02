@@ -178,7 +178,7 @@ function import_tenders()
             'phone' => sanitize_text_field($tender['Mobile_Contacts']),
             'tender_expiry' => sanitize_text_field($tender['Tender_Expiry']),
             '_downloadable' => 'yes',
-            '_virtual' => 'yes',
+            // '_virtual' => 'yes',
         );
 
         $product_id = wp_insert_post($product);
