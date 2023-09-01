@@ -141,8 +141,6 @@ function import_tenders()
 
     foreach ($tender_lists as $tender) {
 
-
-
         $existing_product = get_posts(
             array(
                 'post_type' => 'product',
@@ -159,9 +157,17 @@ function import_tenders()
             continue;
         }
 
+        $workDetail = $tender['Work_Detail'];
+        $linkPosition = strpos($workDetail, "Tender Link :");
+
+        if ($linkPosition !== false) {
+            $cleanedWorkDetail = substr($workDetail, 0, $linkPosition);
+            $cleanedWorkDetail = trim($cleanedWorkDetail);
+        }
+
         $product = array(
             'post_title' => $tender['Tender_Brief'],
-            'post_content' => $tender['Work_Detail'],
+            'post_content' => $cleanedWorkDetail,
             'post_status' => 'publish',
             'post_type' => 'product',
         );
@@ -187,8 +193,6 @@ function import_tenders()
             continue;
         }
 
-
-
         update_post_meta($product_id, '_regular_price', 500);
 
         $fileUrl = str_replace('\\', '/', $tender['FileUrl']);
@@ -200,11 +204,8 @@ function import_tenders()
         update_post_meta($product_id, '_downloadable_files', array($download));
         save_custom_product_fields($product_id);
 
-
     }
 
 }
-
-
 
 add_action('admin_menu', 'add_tender_import_page');

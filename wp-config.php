@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wordpress' );
+define( 'DB_NAME', 'wordpressAPI' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
@@ -56,7 +56,7 @@ define( 'AUTH_SALT',        '[K~j+S,(5TA[yn^e)i4On*:VylDo8Z>iV>GT%k(! q8%h8sE~6m
 define( 'SECURE_AUTH_SALT', 'NOCB0kD];Axp4`LkD>Eo)1R6Y+63tF|a={Ilt(+bsYlXkC:5$Wv{~`7VeIE?L3^~' );
 define( 'LOGGED_IN_SALT',   '=w8d7[P#wv8:J@ydPD{nN~Pu%tYa,!ACdS6L}6`h`#jnC_7LTH2X:5<VuP}T?J2U' );
 define( 'NONCE_SALT',       'Mcg:H|6pC)#r1//G^ a6S&[sn7UK}._`_AOn4;:DljMGrr$swdZ[Pe|2AYHQ;!MI' );
-define('API_URL', 'https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC');
+define( 'API_URL', 'https://www.biddetail.com/kenya/C62A8CB5DD405E768CAD792637AC0446/F4454993C1DE1AB1948A9D33364FA9CC');
 
 /**#@-*/
 
